@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam and Ham Email List</title>
+    <h1 style="margin-left: 414px;color: red;">Classified Emails In Database</h1>
+    <hr>
+</head>
+
+<div class="button" >
+    <button style="margin-left: 20px;"> <a href="http://127.0.0.1:5000/"  style="height: 20px;width: 10px;">Back TO Home</a></button>
+
+    <button style="margin-left: 1100px;"><a href="http://127.0.0.1:5000/delete" >Delete</a></button>
+</div>
+
+<body>
+<table style="border: 1px solid black;border-collapse: collapse;width: 60%;margin-left: 245px;margin-top: 50px;">
+    <tr style="background-color: aqua;height: 40px;">
+        <th style="border: 1px solid black;border-collapse: collapse;">Id</th>
+        <th style="border: 1px solid black;border-collapse: collapse;">Body</th>
+        <th style="border: 1px solid black;border-collapse: collapse;">Status</th>
+    </tr>
+ {% for row in rows %}
+<tr>
+   <TD style="border: 1px solid black;border-collapse: collapse;text-align: center">{{row.id}}</TD>
+   <TD style="border: 1px solid black;border-collapse: collapse;text-align: center">{{row.BODY}}</TD>
+   <TD style="border: 1px solid black;border-collapse: collapse;text-align: center">{{"Spam" if row.status else "Ham"}}</TD>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

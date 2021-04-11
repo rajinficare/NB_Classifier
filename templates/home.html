@@ -1,0 +1,22 @@
+<h1 style="margin-left: 618px"> Home Page</h1>
+<br>
+<hr>
+
+<h2 style="margin-left: 450px"> Please Enter Your Email Below for Verification : </h2>
+
+<form method="POST" style="width: 50%;height: 100px;margin-left: 450px">
+
+
+    {# This is a hidden tag in CSRF security feature. #}
+    {{ form.hidden_tag()}}
+        {{form.Email_message.label(cols="500", rows="200",id="larger")}}
+
+    <br>
+    <br>
+     {{ form.Email_message(size=500) }}
+
+    <br>
+    <br>
+    {{form.submit}}
+
+</form>
